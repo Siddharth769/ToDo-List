@@ -9,20 +9,22 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-   
+    
     @IBOutlet weak var tableView: UITableView!
-
-    var toDos: [ToDo] = []
+    
+    var toDos: [ToDoCore] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        
-        toDos = createToDo()
-        tableView.reloadData()
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getToDos()
+    }
+    
     @IBAction func addButton(_ sender: Any) {
     }
     
@@ -47,20 +49,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         performSegue(withIdentifier: "taskDetailSegue", sender: todo)
     }
     
-    func createToDo() -> [ToDo] {
-        let eggs = ToDo()
-        eggs.name = "Buy Eggs"
-        eggs.important = false
-        
-        let dog = ToDo()
-        dog.name = "Walk the Dog"
-        dog.important = true
-        
-        let tv = ToDo()
-        tv.name = "Record tv show"
-        tv.important = false
-        return [eggs, dog, tv]
+    func getToDos() {
+        if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+            
+            if let coredataToDos = try? context.fetch(ToDoCore.fetchRequest()) as? [ToDoCore] {
+                if let todos = coredataToDos {
+                    toDos = todos
+                    tableView.reloadData()
+                }
+            }
+        }
     }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let todosVC = segue.destination as? ToDosViewController {
@@ -69,11 +69,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         if let completeVC = segue.destination as? CompleteViewController {
             
-            if let toDo = sender as? ToDo {
+            if let toDo = sender as? ToDoCore {
                 completeVC.previousIndex = toDo
                 completeVC.previousVC = self
             }
-           
+            
         }
     }
     

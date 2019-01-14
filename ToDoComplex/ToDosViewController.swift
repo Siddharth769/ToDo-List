@@ -21,19 +21,18 @@ class ToDosViewController: UIViewController {
     }
     
     @IBAction func addTaskButton(_ sender: Any) {
-            
-        let todo = ToDo()
         
-        if let taskText = taskName.text {
+        if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
             
-            todo.name = taskText
-            todo.important = importanceSwitch.isOn
-            
-            previousVC.toDos.append(todo)
-            previousVC.tableView.reloadData()
-            
+            let todo = ToDoCore(entity: ToDoCore.entity(), insertInto: context)
+                if let taskText = taskName.text {
+                            todo.name = taskText
+                            todo.important = importanceSwitch.isOn
+            }
+            try? context.save()
             navigationController?.popViewController(animated: true)
-        } 
+        }
+        
         
     }
 

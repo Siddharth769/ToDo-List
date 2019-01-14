@@ -11,29 +11,37 @@ import UIKit
 class CompleteViewController: UIViewController {
 
     var previousVC = ViewController()
-    var previousIndex = ToDo()
+    var previousIndex: ToDoCore?
     var index = 0
     
     @IBOutlet weak var taskName: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        taskName.text = previousIndex.name
+        taskName.text = previousIndex?.name
         
     }
     
 
     @IBAction func completeButton(_ sender: Any) {
-        for todo in previousVC.toDos {
-            if todo.name == previousIndex.name {
-                print("Found Selected Item")
-                previousVC.toDos.remove(at: index)
-                previousVC.tableView.reloadData()
-                navigationController?.popViewController(animated: true)
-                break
+        
+        if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+            if let todo = previousIndex {
+                context.delete(todo)
             }
-            index += 1
+            navigationController?.popViewController(animated: true)
         }
+        
+//        for todo in previousVC.toDos {
+//            if todo.name == previousIndex?.name {
+//                print("Found Selected Item")
+//                previousVC.toDos.remove(at: index)
+//                previousVC.tableView.reloadData()
+//                navigationController?.popViewController(animated: true)
+//                break
+//            }
+//            index += 1
+//        }
     }
     
 

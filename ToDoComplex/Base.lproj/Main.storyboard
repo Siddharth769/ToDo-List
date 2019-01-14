@@ -20,7 +20,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VTQ-XP-ZAF">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="1" green="0.64789258199999999" blue="0.60850644389999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="nhf-Cy-da1">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
@@ -29,6 +29,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="0.64789258199999999" blue="0.60850644389999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -74,7 +75,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4MJ-ss-8kj">
                                 <rect key="frame" x="102" y="300" width="171" height="30"/>
-                                <color key="backgroundColor" red="0.54746830879999997" green="0.63260191570000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="1" green="0.49577756969999998" blue="0.014622515520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Complete">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -89,7 +90,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.99344235749999998" green="0.7193370053" blue="0.53240794599999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="4MJ-ss-8kj" firstAttribute="top" secondItem="lgf-wK-K4O" secondAttribute="bottom" constant="65" id="3dt-yD-ha0"/>
                             <constraint firstItem="4MJ-ss-8kj" firstAttribute="leading" secondItem="Vk3-I4-GrG" secondAttribute="leading" constant="102" id="9px-EZ-0nw"/>
@@ -140,7 +141,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j2Y-rL-hZK">
                                 <rect key="frame" x="121" y="314" width="133" height="38"/>
-                                <color key="backgroundColor" red="0.54746830879999997" green="0.63260191570000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.99344235749999998" green="0.32803346779999998" blue="0.17771029760000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Add">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -150,7 +151,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="1" green="0.64789258199999999" blue="0.60850644389999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="h9p-sI-Hx1" firstAttribute="leading" secondItem="dZq-zU-7tR" secondAttribute="leading" constant="50" id="2jI-Nf-3UA"/>
                             <constraint firstItem="dZq-zU-7tR" firstAttribute="trailing" secondItem="h9p-sI-Hx1" secondAttribute="trailing" constant="224" id="3Pj-ZY-rrM"/>
